@@ -1,0 +1,9 @@
+name : My First CI CD
+on : push
+jobs :
+  Explore :
+    runs-on : ubuntu-latest
+    steps :
+      - name : Print Event
+        run : echo "The Job Run cause ${{ github.event_name }} ."
+      
