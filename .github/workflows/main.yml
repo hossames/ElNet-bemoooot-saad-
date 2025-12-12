@@ -6,4 +6,13 @@ jobs :
     steps :
       - name : Print Event
         run : echo "The Job Run cause ${{ github.event_name }} ."
+      - name : Print runner
+        run : echo "The job run on ${{runner.os}}"
+      - name : Print branch name
+        run : echo "branch name ${{github.ref}}"
+      - name : download repo 
+        uses : actions/checkout@v4
+      - run : echo "cloning repo ${{github.repository}}"
+      - name : list files
+        run : ls "${{github.workspace}}"
       
